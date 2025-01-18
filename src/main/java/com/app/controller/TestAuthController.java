@@ -3,7 +3,7 @@ package com.app.controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/method")
 public class TestAuthController {
 
     @GetMapping("/get")
