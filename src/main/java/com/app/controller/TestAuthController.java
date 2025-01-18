@@ -16,7 +16,7 @@ public class TestAuthController {
         return "Hello World - POST";
     }
 
-    @PutMapping("/put")
+    @PutMapping("/put")outes
     public String helloPut(){
         return "Hello World - PUT";
     }
