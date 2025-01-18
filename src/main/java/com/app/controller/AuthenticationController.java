@@ -1,5 +1,6 @@
 package com.app.controller;
 
+import com.app.controller.dto.AuthCreateUser;
 import com.app.controller.dto.AuthLoginRequest;
 import com.app.controller.dto.AuthResponse;
 import com.app.service.UserDetailServiceImpl;
@@ -18,6 +19,12 @@ public class AuthenticationController {
 
     @Autowired
     private UserDetailServiceImpl userDetailService;
+
+    //REGISTRO DE USUARIOS
+    @PostMapping("/sign-up")
+    public ResponseEntity<AuthResponse> signUp(@RequestBody @Valid AuthCreateUser authCreateUser){
+        return new ResponseEntity<>(userDetailService.createUser(authCreateUser), HttpStatus.CREATED);
+    }
 
      //LOGIN, todas las entidades que se ven aca son dtos
     @PostMapping("/log-in")
